@@ -1,0 +1,20 @@
+# Python
+*.pyc
+__pycache__/
+*.py[cod]
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.bmp
+temp-*.bmp
+
+# Original source image (keeping the converted versions)
+image.png
+
+# Development
+.vscode/
+.idea/
