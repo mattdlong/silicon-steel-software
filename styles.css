@@ -538,6 +538,26 @@ h1, h2, h3, h4, h5, h6 {
     width: auto;
 }
 
+.footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--white);
+    transition: all var(--transition-speed);
+}
+
+.footer-social-link:hover {
+    color: var(--neon);
+    transform: translateY(-2px);
+}
+
 .footer-text {
     color: var(--mid-gray);
 }
