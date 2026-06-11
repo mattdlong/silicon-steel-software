@@ -1,0 +1,155 @@
+---
+const links = [
+  { href: '#capabilities', label: 'Capabilities' },
+  { href: '#approach', label: 'Approach' },
+  { href: '#principles', label: 'Principles' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="nav-logo" aria-label="Silicon Steel Software — home">
+      <img src="/logo-light.svg" alt="Silicon Steel Software" width="168" height="72" />
+    </a>
+
+    <nav class="nav-menu" id="nav-menu" aria-label="Primary">
+      {links.map(({ href, label }) => <a href={href} class="nav-link">{label}</a>)}
+      <a href="mailto:contact@siliconsteelsoftware.com" class="btn btn-primary nav-cta-mobile">
+        Talk to us
+      </a>
+    </nav>
+
+    <a href="mailto:contact@siliconsteelsoftware.com" class="btn btn-primary nav-cta">Talk to us</a>
+
+    <button
+      class="nav-toggle"
+      id="nav-toggle"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+    >
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    height: var(--nav-height);
+    border-bottom: 1px solid transparent;
+    transition: background-color 250ms var(--ease), border-color 250ms var(--ease);
+  }
+
+  .nav.is-scrolled,
+  .nav:has(.nav-menu.is-open) {
+    background: rgba(10, 12, 14, 0.82);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border-bottom-color: var(--border);
+  }
+
+  .nav-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav-logo img {
+    height: 2.5rem;
+    width: auto;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: color 200ms var(--ease);
+  }
+
+  .nav-link:hover {
+    color: var(--text);
+  }
+
+  .nav-cta-mobile {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .nav-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--text);
+    border-radius: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .nav-cta {
+      display: none;
+    }
+
+    .nav-toggle {
+      display: flex;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: var(--bg-raised);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 1.5rem 1.25rem;
+      transform: translateY(-8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 200ms var(--ease), transform 200ms var(--ease),
+        visibility 0s 200ms;
+    }
+
+    .nav-menu.is-open {
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 200ms var(--ease), transform 200ms var(--ease);
+    }
+
+    .nav-link {
+      padding: 0.875rem 0;
+      font-size: 1.0625rem;
+    }
+
+    .nav-cta-mobile {
+      display: inline-flex;
+      margin-top: 0.75rem;
+    }
+  }
+</style>

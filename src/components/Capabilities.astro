@@ -1,0 +1,153 @@
+---
+const capabilities = [
+  {
+    index: '01',
+    title: 'Agentic Systems',
+    description:
+      'Autonomous agents wired into your real workflows — tool use, orchestration, and human-in-the-loop control where the stakes demand it.',
+    icon: `<path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>`,
+  },
+  {
+    index: '02',
+    title: 'LLM & GenAI Engineering',
+    description:
+      'Retrieval pipelines, fine-tuning, structured generation, and model integrations hardened for production traffic — not demo conditions.',
+    icon: `<path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/>`,
+  },
+  {
+    index: '03',
+    title: 'AI Strategy & Roadmap',
+    description:
+      'Where AI actually moves your P&L — sequenced into a build-ready roadmap with clear owners, milestones, and economics.',
+    icon: `<path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/>`,
+  },
+  {
+    index: '04',
+    title: 'Data & ML Platforms',
+    description:
+      'The substrate intelligence runs on: data pipelines, vector infrastructure, and MLOps that keep model behavior reliable at scale.',
+    icon: `<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>`,
+  },
+  {
+    index: '05',
+    title: 'Evals & AI Governance',
+    description:
+      'Quality you can prove: evaluation harnesses, guardrails, observability, and the governance posture regulators expect.',
+    icon: `<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>`,
+  },
+  {
+    index: '06',
+    title: 'AI Enablement',
+    description:
+      'Your teams, made AI-native: hands-on pairing, internal tooling, and the operating patterns that outlast the engagement.',
+    icon: `<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+  },
+];
+---
+
+<section class="section" id="capabilities">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">Capabilities</p>
+      <h2 class="section-title">Built for what AI can do now.</h2>
+      <p class="section-lede">
+        Not transformation theater — working systems. Every engagement ships software your
+        customers and teams use.
+      </p>
+    </div>
+
+    <div class="grid">
+      {
+        capabilities.map(({ index, title, description, icon }) => (
+          <article class="card reveal">
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  set:html={icon}
+                />
+              </span>
+              <span class="card-index">{index}</span>
+            </div>
+            <h3 class="card-title">{title}</h3>
+            <p class="card-description">{description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .card {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    transition: border-color 250ms var(--ease), transform 250ms var(--ease);
+  }
+
+  .card:hover {
+    border-color: rgba(58, 141, 255, 0.45);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background: rgba(58, 141, 255, 0.12);
+    color: var(--accent-light);
+  }
+
+  .card-index {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-faint);
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-description {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+  }
+
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

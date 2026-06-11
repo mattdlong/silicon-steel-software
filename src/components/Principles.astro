@@ -1,0 +1,85 @@
+---
+const principles = [
+  {
+    title: 'Senior engineers only',
+    description:
+      'The people you meet are the people who build. No leverage pyramids, no hand-offs to a bench you never interviewed.',
+  },
+  {
+    title: 'Production-first',
+    description:
+      'Prototypes prove value; production captures it. We design for the second day one — deployment, monitoring, and cost from the start.',
+  },
+  {
+    title: 'Measured, not vibes',
+    description:
+      'Every system ships with an evaluation harness. If quality moves, you see it in numbers before your customers feel it.',
+  },
+  {
+    title: 'Built to hand over',
+    description:
+      'We transfer capability, not dependency. Documentation, pairing, and tooling that leave your team stronger than we found it.',
+  },
+];
+---
+
+<section class="section" id="principles">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">Principles</p>
+      <h2 class="section-title">How we work.</h2>
+      <p class="section-lede">
+        Silicon for intelligence, steel for discipline. The name is the operating model.
+      </p>
+    </div>
+
+    <div class="principles">
+      {
+        principles.map(({ title, description }) => (
+          <div class="principle reveal">
+            <h3 class="principle-title">{title}</h3>
+            <p class="principle-description">{description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .principle {
+    display: grid;
+    gap: 0.625rem;
+    align-content: start;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: linear-gradient(160deg, rgba(58, 141, 255, 0.06), transparent 45%);
+    transition: border-color 250ms var(--ease);
+  }
+
+  .principle:hover {
+    border-color: rgba(58, 141, 255, 0.45);
+  }
+
+  .principle-title {
+    font-size: 1.25rem;
+  }
+
+  .principle-description {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+  }
+
+  @media (max-width: 768px) {
+    .principles {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

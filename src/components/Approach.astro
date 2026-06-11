@@ -1,0 +1,115 @@
+---
+const steps = [
+  {
+    index: '01',
+    title: 'Assess',
+    description:
+      'Two weeks inside your business: where AI creates leverage, what your data supports, and what to build first. You get a ranked plan, not a slide deck.',
+  },
+  {
+    index: '02',
+    title: 'Prototype',
+    description:
+      'A working system on your data within the first month. Real users, real feedback, real evidence — before you commit serious budget.',
+  },
+  {
+    index: '03',
+    title: 'Ship',
+    description:
+      'Production deployment with evaluation harnesses, guardrails, and observability built in. Quality is measured, not asserted.',
+  },
+  {
+    index: '04',
+    title: 'Scale',
+    description:
+      'Extend what works across the organization while we transfer the capability to your team. The system — and the skill — stays with you.',
+  },
+];
+---
+
+<section class="section approach" id="approach">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">Approach</p>
+      <h2 class="section-title">Weeks, not quarters.</h2>
+      <p class="section-lede">
+        Frontier models change monthly. Our delivery cycle is built for that pace — evidence
+        first, production always.
+      </p>
+    </div>
+
+    <ol class="steps">
+      {
+        steps.map(({ index, title, description }) => (
+          <li class="step reveal">
+            <span class="step-index" aria-hidden="true">{index}</span>
+            <h3 class="step-title">{title}</h3>
+            <p class="step-description">{description}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .approach {
+    background: var(--bg-raised);
+    border-block: 1px solid var(--border);
+  }
+
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem 1.5rem;
+  }
+
+  .step {
+    position: relative;
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-strong);
+  }
+
+  .step::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 3rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .step-index {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--accent-light);
+  }
+
+  .step-title {
+    font-size: 1.375rem;
+  }
+
+  .step-description {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+  }
+
+  @media (max-width: 1024px) {
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .steps {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
