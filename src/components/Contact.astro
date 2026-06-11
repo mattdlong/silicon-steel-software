@@ -40,14 +40,15 @@
 
   .contact-glow {
     position: absolute;
-    bottom: -40%;
+    bottom: -45%;
     left: 50%;
-    width: 56rem;
-    height: 28rem;
+    width: 64rem;
+    height: 32rem;
     transform: translateX(-50%);
-    background: radial-gradient(ellipse at center, var(--accent-glow), transparent 65%);
-    opacity: 0.35;
-    filter: blur(48px);
+    background:
+      radial-gradient(ellipse 60% 80% at 35% 50%, rgba(58, 141, 255, 0.4), transparent 65%),
+      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(167, 139, 250, 0.32), transparent 65%);
+    filter: blur(56px);
     pointer-events: none;
   }
 
@@ -63,6 +64,10 @@
     font-size: clamp(2.5rem, 6vw, 4.25rem);
     font-weight: 700;
     letter-spacing: -0.03em;
+    background: linear-gradient(95deg, #f6f8ff 20%, #6fb0ff 60%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .contact-lede {

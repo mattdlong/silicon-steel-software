@@ -2,6 +2,7 @@
 const capabilities = [
   {
     index: '01',
+    color: '#3a8dff',
     title: 'Agentic Systems',
     description:
       'Autonomous agents wired into your real workflows — tool use, orchestration, and human-in-the-loop control where the stakes demand it.',
@@ -9,6 +10,7 @@ const capabilities = [
   },
   {
     index: '02',
+    color: '#22d3ee',
     title: 'LLM & GenAI Engineering',
     description:
       'Retrieval pipelines, fine-tuning, structured generation, and model integrations hardened for production traffic — not demo conditions.',
@@ -16,6 +18,7 @@ const capabilities = [
   },
   {
     index: '03',
+    color: '#a78bfa',
     title: 'AI Strategy & Roadmap',
     description:
       'Where AI actually moves your P&L — sequenced into a build-ready roadmap with clear owners, milestones, and economics.',
@@ -23,6 +26,7 @@ const capabilities = [
   },
   {
     index: '04',
+    color: '#34d399',
     title: 'Data & ML Platforms',
     description:
       'The substrate intelligence runs on: data pipelines, vector infrastructure, and MLOps that keep model behavior reliable at scale.',
@@ -30,6 +34,7 @@ const capabilities = [
   },
   {
     index: '05',
+    color: '#fbbf24',
     title: 'Evals & AI Governance',
     description:
       'Quality you can prove: evaluation harnesses, guardrails, observability, and the governance posture regulators expect.',
@@ -37,6 +42,7 @@ const capabilities = [
   },
   {
     index: '06',
+    color: '#f472b6',
     title: 'AI Enablement',
     description:
       'Your teams, made AI-native: hands-on pairing, internal tooling, and the operating patterns that outlast the engagement.',
@@ -58,8 +64,8 @@ const capabilities = [
 
     <div class="grid">
       {
-        capabilities.map(({ index, title, description, icon }) => (
-          <article class="card reveal">
+        capabilities.map(({ index, title, description, icon, color }) => (
+          <article class="card reveal" style={`--c: ${color}`}>
             <div class="card-top">
               <span class="card-icon" aria-hidden="true">
                 <svg
@@ -97,14 +103,15 @@ const capabilities = [
     gap: 1rem;
     align-content: start;
     padding: 2rem;
-    background: var(--bg-card);
+    background: linear-gradient(160deg, color-mix(in srgb, var(--c) 9%, var(--bg-card)), var(--bg-card) 55%);
     border: 1px solid var(--border);
     border-radius: 1rem;
-    transition: border-color 250ms var(--ease), transform 250ms var(--ease);
+    transition: border-color 250ms var(--ease), box-shadow 250ms var(--ease);
   }
 
   .card:hover {
-    border-color: rgba(58, 141, 255, 0.45);
+    border-color: color-mix(in srgb, var(--c) 65%, transparent);
+    box-shadow: 0 0 36px color-mix(in srgb, var(--c) 22%, transparent);
   }
 
   .card-top {
@@ -120,14 +127,15 @@ const capabilities = [
     width: 3rem;
     height: 3rem;
     border-radius: 0.75rem;
-    background: rgba(58, 141, 255, 0.12);
-    color: var(--accent-light);
+    background: color-mix(in srgb, var(--c) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
+    color: var(--c);
   }
 
   .card-index {
     font-family: var(--font-mono);
     font-size: 0.8125rem;
-    color: var(--text-faint);
+    color: color-mix(in srgb, var(--c) 75%, white);
   }
 
   .card-title {

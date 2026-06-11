@@ -2,22 +2,28 @@
 /* Design tokens                                                       */
 /* ------------------------------------------------------------------ */
 :root {
-  /* Surfaces */
-  --bg: #0a0c0e;
-  --bg-raised: #111418;
-  --bg-card: #15181d;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.14);
+  /* Surfaces — deep blue-black, not neutral gray */
+  --bg: #05080f;
+  --bg-raised: #0a101d;
+  --bg-card: #0d1426;
+  --border: rgba(106, 156, 255, 0.16);
+  --border-strong: rgba(106, 156, 255, 0.3);
 
   /* Text */
-  --text: #f5f7fa;
-  --text-muted: #a8b0ba;
-  --text-faint: #6b7280;
+  --text: #f6f8ff;
+  --text-muted: #aab6d4;
+  --text-faint: #6e7a99;
 
-  /* Brand */
+  /* Brand + vibrant companions */
   --accent: #3a8dff;
   --accent-light: #6fb0ff;
-  --accent-glow: rgba(58, 141, 255, 0.35);
+  --accent-glow: rgba(58, 141, 255, 0.5);
+  --cyan: #22d3ee;
+  --violet: #a78bfa;
+  --magenta: #f472b6;
+  --emerald: #34d399;
+  --amber: #fbbf24;
+  --gradient-brand: linear-gradient(110deg, var(--accent), var(--cyan));
 
   /* Type */
   --font-display: 'Space Grotesk', sans-serif;
@@ -125,7 +131,7 @@ svg {
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent-light);
+  color: var(--cyan);
 }
 
 .section {
@@ -166,25 +172,28 @@ svg {
 }
 
 .btn-primary {
-  background: var(--accent);
+  position: relative;
+  background: linear-gradient(110deg, #2f7bff, #7c5cff);
   color: #fff;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 24px rgba(58, 141, 255, 0.35);
 }
 
 .btn-primary:hover {
-  background: var(--accent-light);
-  box-shadow: 0 0 32px var(--accent-glow);
+  background: linear-gradient(110deg, #4d92ff, #9272ff);
+  box-shadow: 0 0 40px var(--accent-glow), 0 0 80px rgba(124, 92, 255, 0.35);
 }
 
 .btn-ghost {
-  background: transparent;
+  background: rgba(34, 211, 238, 0.06);
   color: var(--text);
   border: 1px solid var(--border-strong);
 }
 
 .btn-ghost:hover {
-  border-color: var(--accent-light);
-  color: var(--accent-light);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: 0 0 28px rgba(34, 211, 238, 0.25);
 }
 
 /* Scroll reveal — hidden state only applies when JS is available (html.js) */

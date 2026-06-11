@@ -5,7 +5,9 @@
 <section class="hero" id="top">
   <div class="hero-backdrop" aria-hidden="true">
     <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
+    <div class="hero-glow hero-glow-blue"></div>
+    <div class="hero-glow hero-glow-violet"></div>
+    <div class="hero-glow hero-glow-cyan"></div>
   </div>
 
   <div class="container hero-inner">
@@ -56,14 +58,33 @@
 
   .hero-glow {
     position: absolute;
-    top: -20%;
-    left: 50%;
-    width: 60rem;
-    height: 36rem;
-    transform: translateX(-50%);
-    background: radial-gradient(ellipse at center, var(--accent-glow), transparent 65%);
-    opacity: 0.45;
-    filter: blur(40px);
+    border-radius: 50%;
+    filter: blur(64px);
+    pointer-events: none;
+  }
+
+  .hero-glow-blue {
+    top: -15%;
+    left: 8%;
+    width: 48rem;
+    height: 30rem;
+    background: radial-gradient(ellipse at center, rgba(58, 141, 255, 0.45), transparent 65%);
+  }
+
+  .hero-glow-violet {
+    top: 20%;
+    right: -12%;
+    width: 44rem;
+    height: 30rem;
+    background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.38), transparent 65%);
+  }
+
+  .hero-glow-cyan {
+    bottom: -25%;
+    left: 35%;
+    width: 40rem;
+    height: 26rem;
+    background: radial-gradient(ellipse at center, rgba(34, 211, 238, 0.28), transparent 65%);
   }
 
   .hero-inner {
@@ -82,7 +103,7 @@
   }
 
   .hero-title-accent {
-    background: linear-gradient(100deg, var(--accent) 0%, #7cc1ff 60%, #b8dcff 100%);
+    background: linear-gradient(95deg, #4da3ff 0%, #22d3ee 38%, #a78bfa 72%, #f472b6 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
