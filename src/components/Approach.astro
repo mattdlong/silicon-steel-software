@@ -2,24 +2,28 @@
 const steps = [
   {
     index: '01',
+    week: 'WK 0–2',
     title: 'Assess',
     description:
-      'Two weeks inside your business: where AI creates leverage, what your data supports, and what to build first. You get a ranked plan, not a slide deck.',
+      'Two weeks inside your business: where AI creates leverage, what your data supports, and what to build first. A ranked plan, not a slide deck.',
   },
   {
     index: '02',
+    week: 'WK 2–6',
     title: 'Prototype',
     description:
       'A working system on your data within the first month. Real users, real feedback, real evidence — before you commit serious budget.',
   },
   {
     index: '03',
+    week: 'WK 6–10',
     title: 'Ship',
     description:
       'Production deployment with evaluation harnesses, guardrails, and observability built in. Quality is measured, not asserted.',
   },
   {
     index: '04',
+    week: 'WK 10+',
     title: 'Scale',
     description:
       'Extend what works across the organization while we transfer the capability to your team. The system — and the skill — stays with you.',
@@ -28,9 +32,10 @@ const steps = [
 ---
 
 <section class="section approach" id="approach">
+  <div class="approach-glow" aria-hidden="true"></div>
   <div class="container">
     <div class="section-header reveal">
-      <p class="eyebrow">02 — Approach</p>
+      <p class="eyebrow">Approach</p>
       <h2 class="section-title">Weeks, not quarters.</h2>
       <p class="section-lede">
         Frontier models change monthly. Our delivery cycle is built for that pace — evidence
@@ -39,10 +44,15 @@ const steps = [
     </div>
 
     <ol class="steps">
+      <span class="steps-line" aria-hidden="true"></span>
       {
-        steps.map(({ index, title, description }) => (
+        steps.map(({ index, week, title, description }) => (
           <li class="step reveal">
-            <span class="step-index" aria-hidden="true">{index}</span>
+            <span class="step-marker" aria-hidden="true" />
+            <span class="step-meta">
+              <span class="step-index">{index}</span>
+              <span class="step-week">{week}</span>
+            </span>
             <h3 class="step-title">{title}</h3>
             <p class="step-description">{description}</p>
           </li>
@@ -54,11 +64,24 @@ const steps = [
 
 <style>
   .approach {
-    background: var(--paper-raised);
-    border-block: 1px solid var(--rule);
+    background: var(--panel);
+    border-block: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .approach-glow {
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 50rem;
+    height: 30rem;
+    background: radial-gradient(ellipse at center, rgba(58, 141, 255, 0.14), transparent 65%);
+    filter: blur(48px);
+    pointer-events: none;
   }
 
   .steps {
+    position: relative;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -67,18 +90,50 @@ const steps = [
     gap: 2.5rem 2rem;
   }
 
+  .steps-line {
+    position: absolute;
+    top: 0.4375rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--electric), var(--cyan), transparent);
+    opacity: 0.5;
+  }
+
   .step {
+    position: relative;
     display: grid;
     gap: 0.75rem;
     align-content: start;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--ink);
+    padding-top: 1.75rem;
+  }
+
+  .step-marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.875rem;
+    height: 0.875rem;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--cyan);
+    box-shadow: 0 0 14px var(--glow-cyan);
+  }
+
+  .step-meta {
+    display: flex;
+    gap: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
   }
 
   .step-index {
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    color: var(--ink-faint);
+    color: var(--cyan);
+  }
+
+  .step-week {
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
   }
 
   .step-title {
@@ -86,13 +141,17 @@ const steps = [
   }
 
   .step-description {
-    color: var(--ink-soft);
+    color: var(--text-muted);
     font-size: 0.9375rem;
   }
 
   @media (max-width: 1024px) {
     .steps {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-line {
+      display: none;
     }
   }
 

@@ -4,7 +4,7 @@ const year = new Date().getFullYear();
 
 <footer class="footer">
   <div class="container footer-inner">
-    <img class="footer-logo" src="/logo-dark.svg" alt="Silicon Steel Software" width="140" height="60" />
+    <img class="footer-logo" src="/logo-light.svg" alt="Silicon Steel Software" width="140" height="60" />
     <p class="footer-copy">&copy; {year} Silicon Steel Software. All rights reserved.</p>
     <a
       href="https://www.linkedin.com/company/silicon-steel-software"
@@ -24,7 +24,7 @@ const year = new Date().getFullYear();
 
 <style>
   .footer {
-    border-top: 1px solid var(--rule);
+    border-top: 1px solid var(--border);
     padding-block: 2.5rem;
   }
 
@@ -38,10 +38,11 @@ const year = new Date().getFullYear();
   .footer-logo {
     height: 2.25rem;
     width: auto;
+    opacity: 0.9;
   }
 
   .footer-copy {
-    color: var(--ink-faint);
+    color: var(--text-faint);
     font-size: 0.875rem;
   }
 
@@ -51,13 +52,13 @@ const year = new Date().getFullYear();
     justify-content: center;
     width: 2.75rem;
     height: 2.75rem;
-    border-radius: 0.25rem;
-    color: var(--ink-soft);
+    border-radius: 0.5rem;
+    color: var(--text-muted);
     transition: color 200ms var(--ease);
   }
 
   .footer-social:hover {
-    color: var(--ink);
+    color: var(--cyan);
   }
 
   @media (max-width: 640px) {

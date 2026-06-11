@@ -1,0 +1,63 @@
+---
+const stack = [
+  'Claude', 'GPT', 'Gemini', 'Llama', 'vLLM', 'LangGraph', 'Ray', 'PyTorch',
+  'pgvector', 'Kafka', 'dbt', 'Kubernetes', 'Terraform', 'AWS', 'GCP',
+];
+const row = [...stack, ...stack];
+---
+
+<aside class="ticker" aria-label="Technologies we build with">
+  <div class="ticker-track" aria-hidden="true">
+    {row.map((name) => <span class="ticker-item">{name}</span>)}
+  </div>
+  <p class="sr-only">{stack.join(', ')}</p>
+</aside>
+
+<style>
+  .ticker {
+    border-block: 1px solid var(--border);
+    overflow: hidden;
+    padding-block: 1.1rem;
+    background: rgba(10, 14, 22, 0.6);
+  }
+
+  .ticker-track {
+    display: flex;
+    gap: 3.5rem;
+    width: max-content;
+    animation: ticker-scroll 36s linear infinite;
+  }
+
+  .ticker:hover .ticker-track {
+    animation-play-state: paused;
+  }
+
+  .ticker-item {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    white-space: nowrap;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  @keyframes ticker-scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-track {
+      animation: none;
+    }
+  }
+</style>

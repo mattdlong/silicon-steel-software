@@ -1,48 +1,11 @@
 ---
-const capabilities = [
-  {
-    index: '01',
-    title: 'Agentic Systems',
-    description:
-      'Autonomous agents wired into your real workflows — tool use, orchestration, and human-in-the-loop control where the stakes demand it.',
-  },
-  {
-    index: '02',
-    title: 'LLM & GenAI Engineering',
-    description:
-      'Retrieval pipelines, fine-tuning, structured generation, and model integrations hardened for production traffic — not demo conditions.',
-  },
-  {
-    index: '03',
-    title: 'AI Strategy & Roadmap',
-    description:
-      'Where AI actually moves your P&L — sequenced into a build-ready roadmap with clear owners, milestones, and economics.',
-  },
-  {
-    index: '04',
-    title: 'Data & ML Platforms',
-    description:
-      'The substrate intelligence runs on: data pipelines, vector infrastructure, and MLOps that keep model behavior reliable at scale.',
-  },
-  {
-    index: '05',
-    title: 'Evals & AI Governance',
-    description:
-      'Quality you can prove: evaluation harnesses, guardrails, observability, and the governance posture regulators expect.',
-  },
-  {
-    index: '06',
-    title: 'AI Enablement',
-    description:
-      'Your teams, made AI-native: hands-on pairing, internal tooling, and the operating patterns that outlast the engagement.',
-  },
-];
+
 ---
 
 <section class="section" id="capabilities">
   <div class="container">
     <div class="section-header reveal">
-      <p class="eyebrow">01 — Capabilities</p>
+      <p class="eyebrow">Capabilities</p>
       <h2 class="section-title">Built for what AI can do now.</h2>
       <p class="section-lede">
         Not transformation theater — working systems. Every engagement ships software your
@@ -50,62 +13,440 @@ const capabilities = [
       </p>
     </div>
 
-    <ul class="rows">
-      {
-        capabilities.map(({ index, title, description }) => (
-          <li class="row reveal">
-            <span class="row-index">{index}</span>
-            <h3 class="row-title">{title}</h3>
-            <p class="row-description">{description}</p>
-          </li>
-        ))
-      }
-    </ul>
+    <div class="bento">
+      <!-- Agentic systems — animated agent graph -->
+      <article class="tile panel tile-wide reveal">
+        <div class="tile-visual" aria-hidden="true">
+          <svg viewBox="0 0 320 150" fill="none" class="agent-graph">
+            <g class="edges" stroke="url(#edge-grad)" stroke-width="1.5">
+              <path d="M40 75 C 90 30, 120 30, 160 50" />
+              <path d="M40 75 C 90 120, 120 120, 160 100" />
+              <path d="M160 50 C 200 50, 220 40, 280 30" />
+              <path d="M160 50 C 200 70, 220 90, 280 75" />
+              <path d="M160 100 C 210 105, 230 115, 280 120" />
+            </g>
+            <defs>
+              <linearGradient id="edge-grad" x1="0" y1="0" x2="320" y2="0" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#3a8dff" />
+                <stop offset="1" stop-color="#2dd9ff" />
+              </linearGradient>
+            </defs>
+            <g class="nodes">
+              <circle cx="40" cy="75" r="7" class="node n1" />
+              <circle cx="160" cy="50" r="6" class="node n2" />
+              <circle cx="160" cy="100" r="6" class="node n3" />
+              <circle cx="280" cy="30" r="5" class="node n4" />
+              <circle cx="280" cy="75" r="5" class="node n5" />
+              <circle cx="280" cy="120" r="5" class="node n6" />
+            </g>
+            <g class="labels" font-family="JetBrains Mono, monospace" font-size="8" fill="#5c6880">
+              <text x="28" y="95">agent</text>
+              <text x="143" y="38">plan</text>
+              <text x="146" y="120">retrieve</text>
+              <text x="262" y="18">crm</text>
+              <text x="258" y="63">search</text>
+              <text x="250" y="140">escalate</text>
+            </g>
+          </svg>
+        </div>
+        <h3 class="tile-title">Agentic Systems</h3>
+        <p class="tile-text">
+          Autonomous agents wired into your real workflows — tool use, orchestration, and
+          human-in-the-loop control where the stakes demand it.
+        </p>
+      </article>
+
+      <!-- LLM engineering — structured output card -->
+      <article class="tile panel reveal">
+        <div class="tile-visual code-visual" aria-hidden="true">
+          <pre class="code"><span class="c-dim">{'{'}</span>
+  <span class="c-key">"intent"</span>: <span class="c-str">"refund"</span>,
+  <span class="c-key">"confidence"</span>: <span class="c-num">0.97</span>,
+  <span class="c-key">"grounded"</span>: <span class="c-num">true</span>
+<span class="c-dim">{'}'}</span></pre>
+        </div>
+        <h3 class="tile-title">LLM & GenAI Engineering</h3>
+        <p class="tile-text">
+          Retrieval, fine-tuning, and structured generation hardened for production traffic —
+          not demo conditions.
+        </p>
+      </article>
+
+      <!-- Strategy — animated ramp chart -->
+      <article class="tile panel reveal">
+        <div class="tile-visual" aria-hidden="true">
+          <svg viewBox="0 0 280 130" fill="none" class="ramp">
+            <g stroke="rgba(140,170,255,0.12)">
+              <line x1="0" y1="105" x2="280" y2="105" />
+              <line x1="0" y1="65" x2="280" y2="65" />
+              <line x1="0" y1="25" x2="280" y2="25" />
+            </g>
+            <path class="ramp-line" d="M10 110 C 70 108, 100 95, 140 70 S 230 20, 270 12" stroke="url(#ramp-grad)" stroke-width="2.5" stroke-linecap="round" />
+            <defs>
+              <linearGradient id="ramp-grad" x1="0" y1="0" x2="280" y2="0" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#3a8dff" />
+                <stop offset="1" stop-color="#2dd9ff" />
+              </linearGradient>
+            </defs>
+            <circle class="ramp-dot" cx="270" cy="12" r="4" fill="#2dd9ff" />
+            <text x="10" y="125" font-family="JetBrains Mono, monospace" font-size="8" fill="#5c6880">ROADMAP → VALUE</text>
+          </svg>
+        </div>
+        <h3 class="tile-title">AI Strategy & Roadmap</h3>
+        <p class="tile-text">
+          Where AI actually moves your P&L — sequenced into a build-ready roadmap with owners,
+          milestones, and economics.
+        </p>
+      </article>
+
+      <!-- Data platforms — flowing pipeline -->
+      <article class="tile panel reveal">
+        <div class="tile-visual" aria-hidden="true">
+          <svg viewBox="0 0 280 130" fill="none" class="pipeline">
+            <path class="pipe" d="M15 35 H 265" />
+            <path class="pipe" d="M15 65 H 265" />
+            <path class="pipe" d="M15 95 H 265" />
+            <circle class="flow f1" cy="35" r="3.5" />
+            <circle class="flow f2" cy="65" r="3.5" />
+            <circle class="flow f3" cy="95" r="3.5" />
+            <g font-family="JetBrains Mono, monospace" font-size="8" fill="#5c6880">
+              <text x="15" y="22">ingest</text>
+              <text x="124" y="52">embed</text>
+              <text x="232" y="82">serve</text>
+            </g>
+          </svg>
+        </div>
+        <h3 class="tile-title">Data & ML Platforms</h3>
+        <p class="tile-text">
+          The substrate intelligence runs on: pipelines, vector infrastructure, and MLOps that
+          keep model behavior reliable at scale.
+        </p>
+      </article>
+
+      <!-- Evals — animated meters -->
+      <article class="tile panel reveal">
+        <div class="tile-visual" aria-hidden="true">
+          <div class="meters">
+            <div class="meter">
+              <span class="meter-label">groundedness</span>
+              <span class="meter-track"><span class="meter-fill" style="--v: 96%"></span></span>
+              <span class="meter-value">0.96</span>
+            </div>
+            <div class="meter">
+              <span class="meter-label">safety</span>
+              <span class="meter-track"><span class="meter-fill" style="--v: 99%"></span></span>
+              <span class="meter-value">0.99</span>
+            </div>
+            <div class="meter">
+              <span class="meter-label">task success</span>
+              <span class="meter-track"><span class="meter-fill" style="--v: 91%"></span></span>
+              <span class="meter-value">0.91</span>
+            </div>
+          </div>
+        </div>
+        <h3 class="tile-title">Evals & AI Governance</h3>
+        <p class="tile-text">
+          Quality you can prove: evaluation harnesses, guardrails, observability, and the
+          governance posture regulators expect.
+        </p>
+      </article>
+
+      <!-- Enablement — capability heatmap -->
+      <article class="tile panel reveal">
+        <div class="tile-visual" aria-hidden="true">
+          <div class="heatmap">
+            {Array.from({ length: 48 }, (_, i) => <span class="cell" style={`--d: ${(i % 12) * 0.06 + Math.floor(i / 12) * 0.18}s; --o: ${[0.12, 0.3, 0.55, 0.85][Math.floor(((i * 7) % 48) / 12)]}`} />)}
+          </div>
+        </div>
+        <h3 class="tile-title">AI Enablement</h3>
+        <p class="tile-text">
+          Your teams, made AI-native: hands-on pairing, internal tooling, and operating
+          patterns that outlast the engagement.
+        </p>
+      </article>
+    </div>
   </div>
 </section>
 
 <style>
-  .rows {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .row {
+  .bento {
     display: grid;
-    grid-template-columns: 4rem 1fr 1.4fr;
-    gap: 1rem 2.5rem;
-    align-items: baseline;
-    padding-block: 2rem;
-    border-top: 1px solid var(--rule);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
   }
 
-  .row:last-child {
-    border-bottom: 1px solid var(--rule);
+  .tile {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 0.875rem;
+    padding: 1.75rem;
+    overflow: hidden;
+    transition: border-color 250ms var(--ease), box-shadow 250ms var(--ease);
   }
 
-  .row-index {
+  .tile:hover {
+    border-color: var(--border-strong);
+    box-shadow: 0 0 48px rgba(58, 141, 255, 0.14);
+  }
+
+  .tile-wide {
+    grid-column: span 2;
+  }
+
+  .tile-title {
+    font-size: 1.3125rem;
+  }
+
+  .tile-text {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    max-width: 34rem;
+  }
+
+  .tile-visual {
+    display: grid;
+    align-items: center;
+    min-height: 9rem;
+    border-radius: 0.625rem;
+    background: rgba(3, 5, 9, 0.55);
+    border: 1px solid var(--border);
+    padding: 1rem;
+  }
+
+  /* Agent graph */
+  .agent-graph .edges path {
+    stroke-dasharray: 6 7;
+    animation: edge-flow 1.6s linear infinite;
+    opacity: 0.8;
+  }
+
+  .agent-graph .node {
+    fill: #0a0e16;
+    stroke: var(--electric);
+    stroke-width: 2;
+  }
+
+  .agent-graph .n1 {
+    stroke: var(--cyan);
+    animation: node-pulse 2.4s var(--ease) infinite;
+  }
+
+  .agent-graph .n4,
+  .agent-graph .n5,
+  .agent-graph .n6 {
+    animation: node-pulse 2.4s var(--ease) infinite;
+    animation-delay: 1.2s;
+  }
+
+  @keyframes edge-flow {
+    to {
+      stroke-dashoffset: -13;
+    }
+  }
+
+  @keyframes node-pulse {
+    0%,
+    100% {
+      stroke-width: 2;
+    }
+    50% {
+      stroke-width: 4;
+    }
+  }
+
+  /* Code visual */
+  .code {
+    margin: 0;
     font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    color: var(--ink-faint);
+    font-size: 0.75rem;
+    line-height: 1.7;
+    color: var(--text-muted);
   }
 
-  .row-title {
-    font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+  .c-key {
+    color: var(--electric);
   }
 
-  .row-description {
-    color: var(--ink-soft);
-    max-width: 36rem;
+  .c-str {
+    color: #54e6a4;
   }
 
-  @media (max-width: 768px) {
-    .row {
-      grid-template-columns: 4rem 1fr;
+  .c-num {
+    color: var(--cyan);
+  }
+
+  .c-dim {
+    color: var(--text-faint);
+  }
+
+  /* Ramp chart */
+  .ramp-line {
+    stroke-dasharray: 340;
+    stroke-dashoffset: 340;
+    animation: ramp-draw 1.8s var(--ease) forwards;
+    animation-delay: 0.3s;
+  }
+
+  .ramp-dot {
+    opacity: 0;
+    animation: dot-in 400ms var(--ease) forwards;
+    animation-delay: 1.9s;
+    filter: drop-shadow(0 0 6px var(--glow-cyan));
+  }
+
+  @keyframes ramp-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes dot-in {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Pipeline */
+  .pipeline .pipe {
+    stroke: rgba(140, 170, 255, 0.18);
+    stroke-width: 1.5;
+  }
+
+  .pipeline .flow {
+    fill: var(--cyan);
+    filter: drop-shadow(0 0 5px var(--glow-cyan));
+    animation: flow-x 3.2s linear infinite;
+  }
+
+  .pipeline .f2 {
+    animation-delay: 1.05s;
+    fill: var(--electric);
+  }
+
+  .pipeline .f3 {
+    animation-delay: 2.1s;
+  }
+
+  @keyframes flow-x {
+    from {
+      cx: 15;
+      opacity: 0;
+    }
+    8% {
+      opacity: 1;
+    }
+    92% {
+      opacity: 1;
+    }
+    to {
+      cx: 265;
+      opacity: 0;
+    }
+  }
+
+  /* Meters */
+  .meters {
+    display: grid;
+    gap: 0.875rem;
+    width: 100%;
+  }
+
+  .meter {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr 2.5rem;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+  }
+
+  .meter-label {
+    color: var(--text-faint);
+  }
+
+  .meter-track {
+    height: 0.375rem;
+    border-radius: 99px;
+    background: rgba(140, 170, 255, 0.12);
+    overflow: hidden;
+  }
+
+  .meter-fill {
+    display: block;
+    height: 100%;
+    width: var(--v);
+    border-radius: 99px;
+    background: var(--gradient-brand);
+    box-shadow: 0 0 12px rgba(58, 141, 255, 0.5);
+    transform-origin: left;
+    animation: meter-grow 1.2s var(--ease) backwards;
+    animation-delay: 0.4s;
+  }
+
+  .meter-value {
+    color: var(--cyan);
+    text-align: right;
+  }
+
+  @keyframes meter-grow {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  /* Heatmap */
+  .heatmap {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0.375rem;
+    width: 100%;
+  }
+
+  .cell {
+    aspect-ratio: 1;
+    border-radius: 0.1875rem;
+    background: var(--electric);
+    opacity: 0.08;
+    animation: cell-in 600ms var(--ease) forwards;
+    animation-delay: var(--d);
+  }
+
+  @keyframes cell-in {
+    to {
+      opacity: var(--o);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ramp-line {
+      stroke-dashoffset: 0;
+      animation: none;
     }
 
-    .row-description {
-      grid-column: 2;
+    .ramp-dot,
+    .cell {
+      animation: none;
+      opacity: 1;
+    }
+
+    .cell {
+      opacity: var(--o);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .bento {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .bento {
+      grid-template-columns: 1fr;
+    }
+
+    .tile-wide {
+      grid-column: span 1;
     }
   }
 </style>
