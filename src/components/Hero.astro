@@ -3,18 +3,10 @@
 ---
 
 <section class="hero" id="top">
-  <div class="hero-backdrop" aria-hidden="true">
-    <div class="hero-grid"></div>
-    <div class="hero-glow hero-glow-blue"></div>
-    <div class="hero-glow hero-glow-violet"></div>
-    <div class="hero-glow hero-glow-cyan"></div>
-  </div>
-
   <div class="container hero-inner">
     <p class="eyebrow">AI-native consultancy</p>
     <h1 class="hero-title">
-      Frontier AI,<br />
-      <span class="hero-title-accent">forged into production.</span>
+      Frontier AI, <em>forged</em> into production.
     </h1>
     <p class="hero-lede">
       Silicon Steel Software designs, builds, and ships agentic systems, LLM products, and the
@@ -24,113 +16,68 @@
       <a href="mailto:contact@siliconsteelsoftware.com" class="btn btn-primary">
         Start a conversation
       </a>
-      <a href="#capabilities" class="btn btn-ghost">Explore capabilities</a>
+      <a href="#capabilities" class="text-link">
+        Explore capabilities
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+        </svg>
+      </a>
     </div>
+  </div>
+  <div class="container">
+    <hr class="section-rule hero-rule" />
   </div>
 </section>
 
 <style>
   .hero {
-    position: relative;
-    display: flex;
-    align-items: center;
-    min-height: 100svh;
-    padding-top: var(--nav-height);
-    overflow: hidden;
-  }
-
-  .hero-backdrop {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
-
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(var(--border) 1px, transparent 1px),
-      linear-gradient(90deg, var(--border) 1px, transparent 1px);
-    background-size: 72px 72px;
-    mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, black 30%, transparent 75%);
-    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, black 30%, transparent 75%);
-  }
-
-  .hero-glow {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(64px);
-    pointer-events: none;
-  }
-
-  .hero-glow-blue {
-    top: -15%;
-    left: 8%;
-    width: 48rem;
-    height: 30rem;
-    background: radial-gradient(ellipse at center, rgba(58, 141, 255, 0.45), transparent 65%);
-  }
-
-  .hero-glow-violet {
-    top: 20%;
-    right: -12%;
-    width: 44rem;
-    height: 30rem;
-    background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.38), transparent 65%);
-  }
-
-  .hero-glow-cyan {
-    bottom: -25%;
-    left: 35%;
-    width: 40rem;
-    height: 26rem;
-    background: radial-gradient(ellipse at center, rgba(34, 211, 238, 0.28), transparent 65%);
+    padding-top: calc(var(--nav-height) + clamp(4rem, 12vh, 9rem));
   }
 
   .hero-inner {
-    position: relative;
     display: grid;
-    gap: 2rem;
-    padding-block: 6rem;
-    max-width: var(--container);
+    gap: 2.25rem;
+    padding-bottom: clamp(4rem, 10vh, 7rem);
   }
 
   .hero-title {
-    font-size: clamp(2.75rem, 8vw, 5.75rem);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    animation: hero-rise 800ms var(--ease) both;
+    max-width: 18ch;
+    font-size: clamp(3rem, 8.5vw, 6.5rem);
+    animation: hero-rise 700ms var(--ease) both;
   }
 
-  .hero-title-accent {
-    background: linear-gradient(95deg, #4da3ff 0%, #22d3ee 38%, #a78bfa 72%, #f472b6 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  .hero-title em {
+    font-style: italic;
+    font-weight: 400;
   }
 
   .hero-lede {
-    max-width: 40rem;
-    font-size: clamp(1.125rem, 2vw, 1.3125rem);
-    color: var(--text-muted);
-    animation: hero-rise 800ms 120ms var(--ease) both;
+    max-width: 38rem;
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    color: var(--ink-soft);
+    animation: hero-rise 700ms 100ms var(--ease) both;
   }
 
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    animation: hero-rise 800ms 240ms var(--ease) both;
+    align-items: center;
+    gap: 1.75rem;
+    animation: hero-rise 700ms 200ms var(--ease) both;
   }
 
   .eyebrow {
-    animation: hero-rise 800ms var(--ease) both;
+    animation: hero-rise 700ms var(--ease) both;
+  }
+
+  .hero-rule {
+    border-top-color: var(--rule-dark);
   }
 
   @keyframes hero-rise {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(14px);
     }
     to {
       opacity: 1;

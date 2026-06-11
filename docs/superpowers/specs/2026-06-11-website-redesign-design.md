@@ -31,6 +31,12 @@ technically credible — not a generic "digital transformation" brochure.
    without real case-study content; adds nav surface with nothing behind it.
    YAGNI.
 
+> **Revision 2026-06-11:** the dark neon execution was rejected as generic
+> "AI slop." Redirected to a light editorial system: Silicon White paper
+> surfaces, steel ink, display serif (Newsreader) headlines, hairline rules,
+> mono numerals, no icons/gradients/glows. Steel-dark CTAs; Tech Blue demoted
+> to links only. The sections and copy remain as specified below.
+
 ## Design system
 
 - **Surfaces:** `#0A0C0E` page, `#111418` raised, `#16191E` cards;
