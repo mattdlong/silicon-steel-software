@@ -40,9 +40,9 @@ const principles = [
     <div class="principles">
       {
         principles.map(({ index, title, description }) => (
-          <div class="principle panel reveal">
+          <div class="principle panel panel-hover reveal">
             <span class="principle-index" aria-hidden="true">{index}</span>
-            <h3 class="principle-title">{title}</h3>
+            <h3 class="card-title">{title}</h3>
             <p class="principle-description">{description}</p>
           </div>
         ))
@@ -65,12 +65,11 @@ const principles = [
     align-content: start;
     padding: 2rem;
     overflow: hidden;
-    transition: border-color 250ms var(--ease), box-shadow 250ms var(--ease);
   }
 
-  .principle:hover {
-    border-color: var(--border-strong);
-    box-shadow: 0 0 48px rgba(58, 141, 255, 0.12);
+  .principle:nth-child(2),
+  .principle:nth-child(4) {
+    --reveal-delay: 80ms;
   }
 
   .principle-index {
@@ -84,10 +83,6 @@ const principles = [
     color: transparent;
     -webkit-text-stroke: 1px rgba(140, 170, 255, 0.16);
     pointer-events: none;
-  }
-
-  .principle-title {
-    font-size: 1.375rem;
   }
 
   .principle-description {

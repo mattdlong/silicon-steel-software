@@ -99,6 +99,37 @@ const terminalLines = [
     justify-items: start;
   }
 
+  .hero-copy > * {
+    animation: hero-rise 700ms var(--ease) both;
+  }
+
+  .hero-copy > :nth-child(2) {
+    animation-delay: 90ms;
+  }
+
+  .hero-copy > :nth-child(3) {
+    animation-delay: 180ms;
+  }
+
+  .hero-copy > :nth-child(4) {
+    animation-delay: 270ms;
+  }
+
+  .terminal {
+    animation: hero-rise 800ms 350ms var(--ease) both;
+  }
+
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
   .hero-title {
     font-size: clamp(2.75rem, 6.5vw, 4.75rem);
     font-weight: 700;
@@ -143,7 +174,16 @@ const terminalLines = [
     width: 0.625rem;
     height: 0.625rem;
     border-radius: 50%;
-    background: var(--border-strong);
+    background: #ff5f57;
+    opacity: 0.8;
+  }
+
+  .terminal-dot:nth-child(2) {
+    background: #febc2e;
+  }
+
+  .terminal-dot:nth-child(3) {
+    background: #28c840;
   }
 
   .terminal-name {
@@ -212,7 +252,9 @@ const terminalLines = [
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .terminal-line {
+    .terminal-line,
+    .hero-copy > *,
+    .terminal {
       opacity: 1;
       animation: none;
     }

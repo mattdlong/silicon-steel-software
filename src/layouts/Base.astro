@@ -70,6 +70,24 @@ const ogImage = new URL('/og-image.png', Astro.site);
         })
       );
 
+      // Scrollspy: highlight the nav link of the section in view.
+      const sections = ['capabilities', 'approach', 'principles', 'contact']
+        .map((id) => document.getElementById(id))
+        .filter((el): el is HTMLElement => el !== null);
+      const navLinks = new Map(
+        sections.map((s) => [s.id, document.querySelector(`.nav-link[href="#${s.id}"]`)])
+      );
+      const spy = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const link = navLinks.get(entry.target.id);
+            link?.classList.toggle('is-active', entry.isIntersecting);
+          });
+        },
+        { rootMargin: '-40% 0px -55% 0px' }
+      );
+      sections.forEach((s) => spy.observe(s));
+
       // Scroll reveal.
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const targets = document.querySelectorAll('.reveal');

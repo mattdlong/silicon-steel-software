@@ -169,7 +169,7 @@ canvas {
   font-weight: 600;
   cursor: pointer;
   transition: filter 200ms var(--ease), border-color 200ms var(--ease),
-    color 200ms var(--ease), box-shadow 200ms var(--ease);
+    color 200ms var(--ease), box-shadow 200ms var(--ease), transform 200ms var(--ease);
 }
 
 .btn-primary {
@@ -182,6 +182,7 @@ canvas {
 .btn-primary:hover {
   filter: brightness(1.12);
   box-shadow: 0 0 44px var(--glow-blue);
+  transform: translateY(-1px);
 }
 
 .btn-ghost {
@@ -193,13 +194,27 @@ canvas {
 .btn-ghost:hover {
   border-color: var(--cyan);
   color: var(--cyan);
+  transform: translateY(-1px);
 }
 
-/* Panel — shared glassy card */
+/* Panel — shared glassy card with one consistent hover treatment */
 .panel {
   background: linear-gradient(175deg, var(--panel-2), var(--panel));
   border: 1px solid var(--border);
   border-radius: 1rem;
+  transition: border-color 250ms var(--ease), box-shadow 250ms var(--ease),
+    transform 250ms var(--ease);
+}
+
+.panel-hover:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 0 48px rgba(58, 141, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+/* Card-level heading — one scale everywhere */
+.card-title {
+  font-size: 1.375rem;
 }
 
 /* Scroll reveal — hidden state only applies when JS is available (html.js) */
@@ -207,6 +222,7 @@ html.js .reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 650ms var(--ease), transform 650ms var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
 }
 
 html.js .reveal.is-visible {
