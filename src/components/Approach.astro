@@ -64,8 +64,8 @@ const steps = [
 
 <style>
   .approach {
-    background: var(--panel);
-    border-block: 1px solid var(--border);
+    background: var(--bg-soft);
+    border-block: 1px solid var(--line);
     overflow: hidden;
   }
 
@@ -75,7 +75,7 @@ const steps = [
     right: -10%;
     width: 50rem;
     height: 30rem;
-    background: radial-gradient(ellipse at center, rgba(58, 141, 255, 0.14), transparent 65%);
+    background: radial-gradient(ellipse at center, rgba(200, 255, 0, 0.22), transparent 65%);
     filter: blur(48px);
     pointer-events: none;
   }
@@ -96,8 +96,8 @@ const steps = [
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, var(--electric), var(--cyan), transparent);
-    opacity: 0.5;
+    background: linear-gradient(90deg, var(--ink), var(--ink), transparent);
+    opacity: 0.3;
   }
 
   .step {
@@ -115,9 +115,8 @@ const steps = [
     width: 0.875rem;
     height: 0.875rem;
     border-radius: 50%;
-    background: var(--bg);
-    border: 2px solid var(--cyan);
-    box-shadow: 0 0 14px var(--glow-cyan);
+    background: var(--accent);
+    border: 2px solid var(--ink);
   }
 
   .step-meta {
@@ -128,11 +127,12 @@ const steps = [
   }
 
   .step-index {
-    color: var(--cyan);
+    color: var(--ink);
+    font-weight: 500;
   }
 
   .step-week {
-    color: var(--text-faint);
+    color: var(--ink-faint);
     letter-spacing: 0.1em;
   }
 
@@ -149,7 +149,7 @@ const steps = [
   }
 
   .step-description {
-    color: var(--text-muted);
+    color: var(--ink-soft);
     font-size: 0.9375rem;
   }
 

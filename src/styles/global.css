@@ -1,26 +1,28 @@
 /* ------------------------------------------------------------------ */
-/* Design tokens — immersive dark: electric blue/cyan on near-black    */
+/* Design tokens — white & black with fluoro chartreuse accent         */
 /* ------------------------------------------------------------------ */
 :root {
   /* Surfaces */
-  --bg: #030509;
-  --panel: #0a0e16;
-  --panel-2: #0d1320;
-  --border: rgba(140, 170, 255, 0.13);
-  --border-strong: rgba(140, 170, 255, 0.28);
+  --bg: #ffffff;
+  --bg-soft: #f5f5f1;
+  --ink: #0a0a0a;
+  --ink-soft: #50555c;
+  --ink-faint: #878d96;
+  --line: rgba(10, 10, 10, 0.12);
+  --line-strong: rgba(10, 10, 10, 0.28);
 
-  /* Text */
-  --text: #f2f5ff;
-  --text-muted: #93a0b8;
-  --text-faint: #5c6880;
+  /* Black "screen" surfaces (terminal, tile visuals, contact, footer) */
+  --screen: #0a0a0a;
+  --screen-2: #15161a;
+  --screen-line: rgba(255, 255, 255, 0.12);
+  --screen-text: #f4f5f0;
+  --screen-muted: #9aa0a8;
 
-  /* Brand — vibrant */
-  --electric: #3a8dff;
-  --cyan: #2dd9ff;
-  --violet: #7b5cff;
-  --glow-blue: rgba(58, 141, 255, 0.55);
-  --glow-cyan: rgba(45, 217, 255, 0.4);
-  --gradient-brand: linear-gradient(100deg, var(--electric), var(--cyan));
+  /* Accent — fluoro green/yellow */
+  --accent: #c8ff00;
+  --accent-bright: #e2ff3d;
+  --accent-glow: rgba(200, 255, 0, 0.4);
+  --gradient-accent: linear-gradient(100deg, var(--accent), var(--accent-bright));
 
   /* Type */
   --font-display: 'Space Grotesk', sans-serif;
@@ -52,7 +54,7 @@ html {
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--text);
+  color: var(--ink);
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.65;
@@ -77,7 +79,7 @@ p {
 }
 
 a {
-  color: var(--cyan);
+  color: var(--ink);
   text-decoration: none;
 }
 
@@ -89,12 +91,12 @@ canvas {
 }
 
 ::selection {
-  background: var(--electric);
-  color: #fff;
+  background: var(--accent);
+  color: var(--ink);
 }
 
 :focus-visible {
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--ink);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -114,7 +116,7 @@ canvas {
   left: 1rem;
   z-index: 100;
   padding: 0.75rem 1.25rem;
-  background: var(--electric);
+  background: var(--ink);
   color: #fff;
   border-radius: 0.5rem;
   font-weight: 600;
@@ -125,12 +127,25 @@ canvas {
 }
 
 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
   font-family: var(--font-mono);
   font-size: 0.78125rem;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--cyan);
+  color: var(--ink-soft);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--accent);
+  outline: 1px solid var(--ink);
+  outline-offset: 1px;
+  flex-shrink: 0;
 }
 
 .section {
@@ -150,9 +165,17 @@ canvas {
 }
 
 .section-lede {
-  color: var(--text-muted);
+  color: var(--ink-soft);
   font-size: 1.125rem;
   max-width: 38rem;
+}
+
+/* Highlighter — black text on a fluoro marker swipe */
+.highlight {
+  background: var(--accent);
+  padding: 0 0.12em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 /* Buttons */
@@ -168,47 +191,60 @@ canvas {
   font-size: 0.9375rem;
   font-weight: 600;
   cursor: pointer;
-  transition: filter 200ms var(--ease), border-color 200ms var(--ease),
+  transition: background-color 200ms var(--ease), border-color 200ms var(--ease),
     color 200ms var(--ease), box-shadow 200ms var(--ease), transform 200ms var(--ease);
 }
 
 .btn-primary {
-  background: var(--gradient-brand);
-  color: #021024;
-  border: 1px solid transparent;
-  box-shadow: 0 0 28px rgba(58, 141, 255, 0.35);
+  background: var(--accent);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 0 var(--ink);
 }
 
 .btn-primary:hover {
-  filter: brightness(1.12);
-  box-shadow: 0 0 44px var(--glow-blue);
-  transform: translateY(-1px);
+  background: var(--accent-bright);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 0 var(--ink);
 }
 
 .btn-ghost {
-  background: rgba(45, 217, 255, 0.05);
-  color: var(--text);
-  border: 1px solid var(--border-strong);
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--ink);
 }
 
 .btn-ghost:hover {
-  border-color: var(--cyan);
-  color: var(--cyan);
+  background: var(--ink);
+  color: #fff;
   transform: translateY(-1px);
 }
 
-/* Panel — shared glassy card with one consistent hover treatment */
+/* On black sections */
+.on-screen .btn-ghost {
+  background: transparent;
+  color: var(--screen-text);
+  border-color: var(--screen-line);
+}
+
+.on-screen .btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+/* Panel — white card with one consistent hover treatment */
 .panel {
-  background: linear-gradient(175deg, var(--panel-2), var(--panel));
-  border: 1px solid var(--border);
+  background: var(--bg);
+  border: 1px solid var(--line);
   border-radius: 1rem;
   transition: border-color 250ms var(--ease), box-shadow 250ms var(--ease),
     transform 250ms var(--ease);
 }
 
 .panel-hover:hover {
-  border-color: var(--border-strong);
-  box-shadow: 0 0 48px rgba(58, 141, 255, 0.14);
+  border-color: var(--ink);
+  box-shadow: 0 12px 32px rgba(10, 10, 10, 0.1);
   transform: translateY(-2px);
 }
 

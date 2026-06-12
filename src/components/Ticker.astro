@@ -17,10 +17,10 @@ const row = [...stack, ...stack];
 
 <style>
   .ticker {
-    border-block: 1px solid var(--border);
+    border-block: 1px solid var(--ink);
     overflow: hidden;
     padding-block: 1.1rem;
-    background: rgba(10, 14, 22, 0.6);
+    background: var(--screen);
   }
 
   .ticker-viewport {
@@ -45,8 +45,12 @@ const row = [...stack, ...stack];
     font-size: 0.8125rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--text-faint);
+    color: var(--screen-muted);
     white-space: nowrap;
+  }
+
+  .ticker-item:nth-child(4n + 1) {
+    color: var(--accent);
   }
 
   .sr-only {
